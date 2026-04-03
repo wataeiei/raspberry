@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>树莓派摄像头实时监控</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>树莓派摄像头实时监控</h1>
+            <div class="status">
+                <span id="connection-status" class="status-indicator">未连接</span>
+                <span id="resolution-status">分辨率: -</span>
+            </div>
+        </header>
+
+        <main>
+            <div class="video-container">
+                <video id="video-stream" autoplay playsinline></video>
+                <div id="no-signal" class="no-signal">
+                    <p>等待视频信号...</p>
+                </div>
+            </div>
+
+            <div class="controls">
+                <h2>分辨率控制</h2>
+                <div class="resolution-buttons">
+                    <button class="resolution-btn" data-resolution="640x480">640×480 (VGA)</button>
+                    <button class="resolution-btn" data-resolution="800x600">800×600 (SVGA)</button>
+                    <button class="resolution-btn" data-resolution="1024x768">1024×768 (XGA)</button>
+                    <button class="resolution-btn" data-resolution="1280x720">1280×720 (HD)</button>
+                    <button class="resolution-btn" data-resolution="1920x1080">1920×1080 (Full HD)</button>
+                </div>
+                <div class="info">
+                    <p>当前分辨率: <span id="current-resolution">-</span></p>
+                    <p>帧率: <span id="fps">-</span> FPS</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
+
